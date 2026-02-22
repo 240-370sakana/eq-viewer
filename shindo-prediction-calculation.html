@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>震度予測計算</title>
+        <meta name="description" content="過去、現在、未来の地震を情報でつなぐ">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- リセットCSS -->
+        <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <!-- Googleフォント -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Philosopher&display=swap" rel="stylesheet">
+    <!-- CSS -->
+        <link rel="stylesheet" href="css/style.css">
+        <script>
+        function calc(f){ f.z.value=(1.- Math.exp( Math.pow(10,(eval(f.a.value)+eval(f.b.value)
+            *(eval(f.mm.value)-eval(f.m.value))))*(Math.pow(eval(f.t.value)+eval(f.s.value)
+            +eval(f.c.value),1-eval(f.p.value))-Math.pow(eval(f.s.value)
+            +eval(f.c.value),1-eval(f.p.value)))/(eval(f.p.value)-1)))*100.;}
+        function calc(f){f.z.value=2.68+1.72*(Math.log10((10*((3/2)**(2/3)))*eval(f.arv.value)))}
+    </script>
+    </head>
+
+    <body>
+        <div class="page-header">
+            <a href="index.html">地震活動解析webアプリ(名称未定)</a>
+        </div>
+
+        <h1>震度予測計算</h1>
+        <form method="post">
+            定数:
+            <p>
+                Mjma:
+                <input type="text" size="10" name="Mjma" value="5.0">
+                <br>
+                深さ[km]:
+                <input type="text" size="10" name="depth" value="10">
+                <br>
+                震源距離[km]:
+                <input type="text" size="10" name="Distance" value="10">
+                <br>
+                地盤増幅率:
+                <input type="text" size="10" name="arv" value="1.2">
+                <br>
+                <input type="button" value="CALC" onclick="calc(this.form)">
+            </p>
+            <hr>
+            計算結果 : 予想震度<input type="text" size="10" name="z">
+            <br>
+        </form>
+
+        <footer class="page-footer">
+            <div class="copyright">
+                <p>
+                    連絡先      240.370sakana@gmail.com
+                </p>
+                <small>&copy; 2025 geophysical_Lotus a.k.a. 240aloe</small>
+            </div>
+        </footer>
+    </body>
+</html>
