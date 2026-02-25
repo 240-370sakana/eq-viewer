@@ -1,5 +1,6 @@
 # eq-viewer
 地震活動ビューア  
+https://240-370sakana.github.io/eq-viewer/  
 2026/02/23更新  
 
 ## 更新予定  
